@@ -47,7 +47,7 @@ plugin_manager install_bundle  target = C:\path\to\dsh-session-migration
 From GitHub:
 
 ```text
-plugin_manager install_bundle  target = git+https://github.com/<your-name>/dsh-session-migration.git
+plugin_manager install_bundle  target = git+https://github.com/Alvin070911/dsh-session-migration.git
 ```
 
 Or add the row to a profile's `cordis.patch.yml` yourself:
@@ -193,7 +193,7 @@ gh repo create dsh-session-migration --public --source . --remote origin --push
 Then anyone can install it directly:
 
 ```text
-plugin_manager install_bundle  target = git+<repository url>
+plugin_manager install_bundle  target = git+https://github.com/Alvin070911/dsh-session-migration.git
 ```
 
 ## License

@@ -61,7 +61,7 @@ plugin_manager install_bundle  target = C:\path\to\dsh-session-migration
 
 ```text
 plugin_manager install_bundle
-  target = git+https://github.com/<your-name>/dsh-session-migration.git
+  target = git+https://github.com/Alvin070911/dsh-session-migration.git
 ```
 
 ### 方式三：npm（发布后）
@@ -203,7 +203,7 @@ gh repo create dsh-session-migration --public --source . --remote origin --push
 之后任何人都可以直接安装：
 
 ```text
-plugin_manager install_bundle  target = git+<仓库地址>
+plugin_manager install_bundle  target = git+https://github.com/Alvin070911/dsh-session-migration.git
 ```
 
 ## 许可

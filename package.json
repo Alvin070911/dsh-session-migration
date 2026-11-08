@@ -51,6 +51,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/REPLACE-ME/dsh-session-migration.git"
+    "url": "git+https://github.com/Alvin070911/dsh-session-migration.git"
+  },
+  "homepage": "https://github.com/Alvin070911/dsh-session-migration#readme",
+  "bugs": {
+    "url": "https://github.com/Alvin070911/dsh-session-migration/issues"
   }
 }
