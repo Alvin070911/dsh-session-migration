@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Session Migration",
+    "description": "Move a whole session — log, header cwd and workspace membership — into another workspace from a button in the session header, plus session browsing, a health check and backup export."
+  }
+}

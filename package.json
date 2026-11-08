@@ -1,0 +1,56 @@
+{
+  "name": "dsh-session-migration",
+  "version": "0.1.0",
+  "description": "DeepSeek Harness session migration panel: move a whole session (log, header cwd, workspace membership) into another workspace from a button in the session header, browse sessions, run a health check, and export backups.",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "lib",
+    "locale",
+    "cordis.patch.yml",
+    "icon.svg",
+    "README.md",
+    "README.zh.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-theme"
+      ]
+    }
+  },
+  "scripts": {
+    "check": "node --check index.js && node --check client.js && node --check lib/paths.js && node --check lib/frames.js && node --check lib/scan.js && node --check lib/engine.js",
+    "test": "node --test test/"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "cordis",
+    "plugin",
+    "session",
+    "migration",
+    "workspace"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/REPLACE-ME/dsh-session-migration.git"
+  }
+}

@@ -1,0 +1,7 @@
+# Bundle patch for dsh-session-migration.
+#
+# The package declares `dsh.client`, so the browser half (client.js) is picked
+# up automatically. This row only inserts the Host half.
+- insert:
+    - id: session-migration
+      name: dsh-session-migration

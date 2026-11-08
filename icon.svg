@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Session Migration">
+  <defs>
+    <linearGradient id="dsm-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2f6bff"/>
+      <stop offset="1" stop-color="#0b3fbe"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="15" fill="url(#dsm-bg)"/>
+  <rect x="11" y="17" width="13" height="30" rx="3.5" fill="#ffffff" fill-opacity="0.92"/>
+  <rect x="40" y="17" width="13" height="30" rx="3.5" fill="none" stroke="#ffffff" stroke-opacity="0.92" stroke-width="2.6"/>
+  <path d="M27.5 32h5" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M36.2 32l-3.6-3.6M36.2 32l-3.6 3.6" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
