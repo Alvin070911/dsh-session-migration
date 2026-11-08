@@ -1320,16 +1320,26 @@ window.__ModuleLoader__.load({
       const t = makeTranslator(ctx)
       const api = safeGet(ctx, 'uiWorkspace')
 
-      ctx.slots.inject('conversation.session.header.utilities', () =>
-        ctx.slots.register(
-          { name: 'conversation.session.header.utilities', id: 'session-migration', order: 30 },
-          (props) => h(HeaderButton, { store, t, sessionId: props?.sessionId ?? null }),
-        ),
-      )
+      // A slot that this DSH no longer declares must not take the whole web boot
+      // down with it, so each registration is isolated.
+      try {
+        ctx.slots.inject('conversation.session.header.utilities', () =>
+          ctx.slots.register(
+            { name: 'conversation.session.header.utilities', id: 'session-migration', order: 30 },
+            (props) => h(HeaderButton, { store, t, sessionId: props?.sessionId ?? null }),
+          ),
+        )
+      } catch (error) {
+        console.error('[dsh-session-migration] could not register the session-header button', error)
+      }
 
-      ctx.slots.inject('shell.overlay', () =>
-        ctx.slots.register({ name: 'shell.overlay', id: 'session-migration-dialog', order: 20 }, () => h(PanelHost, { store, t, api })),
-      )
+      try {
+        ctx.slots.inject('shell.overlay', () =>
+          ctx.slots.register({ name: 'shell.overlay', id: 'session-migration-dialog', order: 20 }, () => h(PanelHost, { store, t, api })),
+        )
+      } catch (error) {
+        console.error('[dsh-session-migration] could not register the migration dialog', error)
+      }
     }
 
     exports.apply = apply
