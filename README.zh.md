@@ -194,6 +194,18 @@ client.js       浏览器半侧：标题栏按钮 + shell.overlay 对话框
   移动目录会让旧工作区变成 `missing-dir`。插件只搬**内容**，保留源目录本身。
 - 复制正在写入的会话做导出时可能得到被截断的尾部；DSH 读取时会丢弃撕裂的尾部，不影响源数据。
 
+## 发布
+
+```powershell
+gh repo create dsh-session-migration --public --source . --remote origin --push
+```
+
+之后任何人都可以直接安装：
+
+```text
+plugin_manager install_bundle  target = git+<仓库地址>
+```
+
 ## 许可
 
 MIT。DSH 的存储格式、`projectKey` 规则与工作区语义以你所使用版本的源码为准

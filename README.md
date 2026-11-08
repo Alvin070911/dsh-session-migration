@@ -184,6 +184,18 @@ Only Node built-ins are imported, so the package can be published and installed 
 - Moving a whole workspace *directory* is out of scope: a workspace path is fixed by `realpath` at registration, so relocating it makes the old workspace `missing-dir`. The plugin moves **contents** and keeps the source directory.
 - Exporting a session that is being written can capture a torn tail; DSH discards a torn tail when reading, and the source is untouched.
 
+## Publishing
+
+```powershell
+gh repo create dsh-session-migration --public --source . --remote origin --push
+```
+
+Then anyone can install it directly:
+
+```text
+plugin_manager install_bundle  target = git+<repository url>
+```
+
 ## License
 
 MIT. Storage format, `projectKey` rules, and workspace semantics follow the DSH version you
