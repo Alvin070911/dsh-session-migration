@@ -20,10 +20,13 @@
 window.__ModuleLoader__.load({
   id: 'dsh-session-migration',
   factory(require) {
+    // The loader hands the factory only `require`; the CJS-style face is declared
+    // here so the kernel can adopt `apply`/`inject` from the returned exports.
+    const module = { exports: {} }
+    const exports = module.exports
     const React = require('react')
     const h = React.createElement
     const API_PATH = '/dsh-session-migration/api'
-    const NS = 'dshSessionMigration'
 
     // ------------------------------------------------------------------ styles
 

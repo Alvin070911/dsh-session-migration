@@ -100,12 +100,11 @@ function loadBundle() {
       },
     },
   }
-  const module = { exports: {} }
-  const run = new Function('window', 'module', 'exports', 'require', source)
-  run(windowShim, module, module.exports, (specifier) => {
-    if (specifier === 'react') return reactShim()
-    throw new Error(`unexpected external: ${specifier}`)
-  })
+  // The real loader evaluates the bundle as a plain script and calls the factory
+  // with `require` only — no surrounding `module`/`exports`. Reproducing that
+  // exactly is what catches a factory that assumes CJS globals.
+  const run = new Function('window', source)
+  run(windowShim)
 
   assert.notEqual(moduleRegistration, null, 'the bundle registers itself with the module loader')
   assert.equal(moduleRegistration.id, 'dsh-session-migration')
